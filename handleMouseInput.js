@@ -7,12 +7,12 @@ const animate = (direction, target) => {
   console.clear();
 
   target.style.animation = "animationMove 2s";
-
   var style = document.createElement("style");
   style.type = "text/css";
   var w = window.innerWidth;
   var h = window.innerHeight;
-
+  // Do Transition Here
+  //debugger;
   switch (direction) {
     case "topleft":
       style.innerHTML = createKeyFrame(0, 0);
@@ -85,12 +85,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
     "mousedown",
     function (e) {
       isDown = true;
-      //console.clear();
+      e.preventDefault();
       down = { x: e.clientX, y: e.clientY };
       up = { x: 0, y: 0 };
-      //console.log("DOWN", down);
-      //console.log("UP", up);
-      //console.log("MOVE", move);
       imageObject.engage();
       offset = [target.offsetLeft - e.clientX, target.offsetTop - e.clientY];
     },
@@ -115,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
       const score = engine.calculateScores(isMatched);
       document.getElementById("score").innerText = score;
       //debugger;
-      animate(d, imageUp, target);
+      animate(d, target);
     },
     true
   );
