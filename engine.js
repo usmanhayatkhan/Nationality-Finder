@@ -1,7 +1,8 @@
 const imageObjectInterval = 300;
 const inputInterval = 100;
-const animationInterval = 300;
+const animationInterval = 600;
 const totalIterations = 10;
+const directionThreshold = 0;
 let currentIteration = 1;
 let score = 0;
 let images = [
@@ -68,7 +69,6 @@ let nationalityBoxes = [
 
 let x = 5;
 let y = 0;
-let directionThreshold = 2;
 
 let randomInputs = [
   { yValue: 5, x: 0, y: 0 },
@@ -219,7 +219,7 @@ const imageObject = {
           currentImage = images[imageIndex];
           currentNationality = nationalities[nationalitiesIndex];
           currentNationality.source = currentImage;
-          console.log(`cN => ${currentNationality}`);
+          //console.log(`cN => ${currentNationality}`);
         } else {
           y++;
         }
@@ -228,10 +228,10 @@ const imageObject = {
         target.setAttribute("src", currentImage);
         target.style.top = y * 100 + "px";
         target.style.left = 45 + "%";
-        var n = document.getElementById("nationality");
-        n.innerText = currentNationality.name;
-        n.style.top = y * 100 + "px";
-        n.style.left = 45 + "%";
+        // var n = document.getElementById("nationality");
+        // n.innerText = currentNationality.name;
+        // n.style.top = y * 100 + "px";
+        // n.style.left = 45 + "%";
 
         // console.log(`Image: x=>${x}, y=>${y}`);
       } else {

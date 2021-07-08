@@ -33,10 +33,9 @@ const handleUserInput = () => {
     score.innerText = "Score :" + score.innerText + " GAME OVER";
     document.getElementById("start").className = "start-visible";
     document.getElementById("target").style.display = "none";
-    document.getElementById("nationality").style.display = "none";
   } else {
     if (!isStopped) {
-      console.log("ITERATION", currentIteration);
+      //console.log("ITERATION", currentIteration);
     }
   }
 };
